@@ -20,43 +20,21 @@
 
 （其实大佬们自己配置也可以
 
-因为买了 [洋桃](http://doyoung.net/YT/index.html) 的开发板，所以很多都是现成的轮子拿来用的。所以会在很多文件里见到洋桃的版权声明。
+因为买了 [洋桃](http://doyoung.net/YT/index.html) 的开发板，所以很多都是现成的轮子拿来用的。（所以会在很多文件里见到洋桃的版权声明）
 
 ---
 
 ##### 19/12/13 基本GPIO操作
 
-###### GPIO点灯
+GPIO点灯 [1]
 
-`GPIO_Write`
-
-`GPIO_SetBits`
-
-`GPIO_ResetBits`
-
-`GPIO_WriteBit`
+按键点灯 [2]
 
 
 
-按键点灯
+##### 19/12/14 来点中断 & 来点DMA
 
-`GPIO_ReadInputDataBit`
+一键切换闪灯模式 [3]
 
-`GPIO_ReadInputData`
-
-`GPIO_ReadOutputDataBit`
-
-`GPIO_ReadOutputData`
-
-
-
-###### 19/12/14 来点中断
-
-一键切换闪灯模式
-
-`NVIC`
-
-`EXTI`
-
-`GPIO`
+单纯的DMA测试 [4]
 
