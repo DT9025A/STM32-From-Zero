@@ -24,8 +24,39 @@
 
 ---
 
-###### 19/12/13 基本GPIO操作
+##### 19/12/13 基本GPIO操作
 
-GPIO点灯
+###### GPIO点灯
+
+`GPIO_Write`
+
+`GPIO_SetBits`
+
+`GPIO_ResetBits`
+
+`GPIO_WriteBit`
+
+
 
 按键点灯
+
+`GPIO_ReadInputDataBit`
+
+`GPIO_ReadInputData`
+
+`GPIO_ReadOutputDataBit`
+
+`GPIO_ReadOutputData`
+
+
+
+###### 19/12/14 来点中断
+
+一键切换闪灯模式
+
+`NVIC`
+
+`EXTI`
+
+`GPIO`
+
