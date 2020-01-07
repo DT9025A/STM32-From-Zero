@@ -1,5 +1,7 @@
 *.orig
 *.map
+*.axf
+*.htm
 *.Administrator
 *.DT9025A
 *.bak
@@ -18,3 +20,5 @@ Startup/
 Driver/sys.*
 Driver/stm32f10x*
 Driver/delay.*
+
+模板工程/
