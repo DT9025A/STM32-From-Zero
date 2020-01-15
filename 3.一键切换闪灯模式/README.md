@@ -69,65 +69,65 @@ NVIC有关库函数位于《固件库手册》的163页，NVIC的详细说明，
 //NVIC有关定义和操作函数
 typedef struct
 {
-  uint8_t NVIC_IRQChannel;						//中断通道
-  uint8_t NVIC_IRQChannelPreemptionPriority;	//抢占优先级
-  uint8_t NVIC_IRQChannelSubPriority;			//响应优先级
-  FunctionalState NVIC_IRQChannelCmd;			////使能/失能NVIC通道
+  uint8_t NVIC_IRQChannel;//中断通道
+  uint8_t NVIC_IRQChannelPreemptionPriority;//抢占优先级
+  uint8_t NVIC_IRQChannelSubPriority;//响应优先级
+  FunctionalState NVIC_IRQChannelCmd;//使能/失能NVIC通道
 } NVIC_InitTypeDef;
 
 /****************************************************
-				NVIC_IRQChannel取值
-	WWDG_IRQChannel				窗口看门狗中断
-	PVD_IRQChannelPVD			通过EXTI探测中断
-	TAMPER_IRQChannel			篡改中断
-	RTC_IRQChannelRTC			全局中断
-	FlashItf_IRQChannelFLASH	全局中断
-	RCC_IRQChannelRCC			全局中断
-	EXTI0_IRQChannel			外部中断线0中断
-	EXTI1_IRQChannel			外部中断线1中断
-	EXTI2_IRQChannel			外部中断线2中断
-	EXTI3_IRQChannel			外部中断线3中断
-	EXTI4_IRQChannel			外部中断线4中断
-	DMAChannel1_IRQChannel		DMA通道1中断
-	DMAChannel2_IRQChannel		DMA通道2中断
-	DMAChannel3_IRQChannel		DMA通道3中断
-	DMAChannel4_IRQChannel		DMA通道4中断
-	DMAChannel5_IRQChannel		DMA通道5中断
-	DMAChannel6_IRQChannel		DMA通道6中断
-	DMAChannel7_IRQChannel		DMA通道7中断
-	ADC_IRQChannelADC			全局中断
-	USB_HP_CANTX_IRQChannel		USB高优先级或者CAN发送中断
-	USB_LP_CAN_RX0_IRQChannel	USB低优先级或者CAN接收0中断
-	CAN_RX1_IRQChannel			CAN接收1中断
-	CAN_SCE_IRQChannel			CAN SCE中断
-	EXTI9_5_IRQChannel			外部中断线9-5中断
-	TIM1_BRK_IRQChannel			TIM1暂停中断
-	TIM1_UP_IRQChannel			TIM1刷新中断
-	TIM1_TRG_COM_IRQChannel		TIM1触发和通讯中断
-	TIM1_CC_IRQChannel			TIM1捕获比较中断
-	TIM2_IRQChannel				TIM2全局中断
-	TIM3_IRQChannel				TIM3全局中断
-	TIM4_IRQChannel				TIM4全局中断
-	I2C1_EV_IRQChannel			I2C1事件中断
-	I2C1_ER_IRQChannel			I2C1错误中断
-	I2C2_EV_IRQChannel			I2C2事件中断
-	I2C2_ER_IRQChannel			I2C2错误中断
-	SPI1_IRQChannel				SPI1全局中断
-	SPI2_IRQChannel				SPI2全局中断
-	USART1_IRQChannel			USART1全局中断
-	USART2_IRQChannel			USART2全局中断
-	USART3_IRQChannel			USART3全局中断
-	EXTI15_10_IRQChannel		外部中断线15-10中断
-	RTCAlarm_IRQChannel			RTC闹钟通过EXTI线中断
-	USBWakeUp_IRQChannel		USB通过EXTI线从悬挂唤醒中断
+                NVIC_IRQChannel取值
+    WWDG_IRQChannel               窗口看门狗中断
+    PVD_IRQChannelPVD             通过EXTI探测中断
+    TAMPER_IRQChannel             篡改中断
+    RTC_IRQChannelRTC             全局中断
+    FlashItf_IRQChannelFLASH      全局中断
+    RCC_IRQChannelRCC             全局中断
+    EXTI0_IRQChannel              外部中断线0中断
+    EXTI1_IRQChannel              外部中断线1中断
+    EXTI2_IRQChannel              外部中断线2中断
+    EXTI3_IRQChannel              外部中断线3中断
+    EXTI4_IRQChannel              外部中断线4中断
+    DMAChannel1_IRQChannel        DMA通道1中断
+    DMAChannel2_IRQChannel        DMA通道2中断
+    DMAChannel3_IRQChannel        DMA通道3中断
+    DMAChannel4_IRQChannel        DMA通道4中断
+    DMAChannel5_IRQChannel        DMA通道5中断
+    DMAChannel6_IRQChannel        DMA通道6中断
+    DMAChannel7_IRQChannel        DMA通道7中断
+    ADC_IRQChannelADC             全局中断
+    USB_HP_CANTX_IRQChannel       USB高优先级或者CAN发送中断
+    USB_LP_CAN_RX0_IRQChannel     USB低优先级或者CAN接收0中断
+    CAN_RX1_IRQChannel            CAN接收1中断
+    CAN_SCE_IRQChannel            CAN SCE中断
+    EXTI9_5_IRQChannel            外部中断线9-5中断
+    TIM1_BRK_IRQChannel           TIM1暂停中断
+    TIM1_UP_IRQChannel            TIM1刷新中断
+    TIM1_TRG_COM_IRQChannel       TIM1触发和通讯中断
+    TIM1_CC_IRQChannel            TIM1捕获比较中断
+    TIM2_IRQChannel               TIM2全局中断
+    TIM3_IRQChannel               TIM3全局中断
+    TIM4_IRQChannel               TIM4全局中断
+    I2C1_EV_IRQChannel            I2C1事件中断
+    I2C1_ER_IRQChannel            I2C1错误中断
+    I2C2_EV_IRQChannel            I2C2事件中断
+    I2C2_ER_IRQChannel            I2C2错误中断
+    SPI1_IRQChannel               SPI1全局中断
+    SPI2_IRQChannel               SPI2全局中断
+    USART1_IRQChannel             USART1全局中断
+    USART2_IRQChannel             USART2全局中断
+    USART3_IRQChannel             USART3全局中断
+    EXTI15_10_IRQChannel          外部中断线15-10中断
+    RTCAlarm_IRQChannel           RTC闹钟通过EXTI线中断
+    USBWakeUp_IRQChannel          USB通过EXTI线从悬挂唤醒中断
 ****************************************************/
 
-void NVIC_PriorityGroupConfig(u32 NVIC_PriorityGroup);	//设置优先级分组
-void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);		//初始化NVIC
-void NVIC_SETPRIMASK(void); 							//使能PRIMASK优先级：提升执行优先级至0,相当于失能总中断
-void NVIC_SETFAULTMASK(void);							//使能FAULTMASK优先级：提升执行优先级至-1,相当于失能总中断
-void NVIC_RESETPRIMASK(void); 							//失能PRIMASK优先级,相当于使能总中断
-void NVIC_RESETFAULTMASK(void);							//失能FAULTMASK优先级,相当于使能总中断
+void NVIC_PriorityGroupConfig(u32 NVIC_PriorityGroup);  //设置优先级分组
+void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);      //初始化NVIC
+void NVIC_SETPRIMASK(void);                             //使能PRIMASK优先级：提升执行优先级至0,相当于失能总中断
+void NVIC_SETFAULTMASK(void);                           //使能FAULTMASK优先级：提升执行优先级至-1,相当于失能总中断
+void NVIC_RESETPRIMASK(void);                           //失能PRIMASK优先级,相当于使能总中断
+void NVIC_RESETFAULTMASK(void);                         //失能FAULTMASK优先级,相当于使能总中断
 ```
 
 
@@ -147,116 +147,116 @@ EXTI有关库函数位于《固件库手册》的98页，EXTI有关信息位于�
 //EXTI有关定义和操作函数
 typedef enum
 {
-  EXTI_Mode_Interrupt = 0x00,	//中断形式
-  EXTI_Mode_Event = 0x04		//事件形式
+  EXTI_Mode_Interrupt = 0x00,    //中断形式
+  EXTI_Mode_Event = 0x04         //事件形式
 }EXTIMode_TypeDef;
 
 typedef enum
 {
-  EXTI_Trigger_Rising = 0x08,			//上升沿中断
-  EXTI_Trigger_Falling = 0x0C,  		//下降沿中断
-  EXTI_Trigger_Rising_Falling = 0x10	//跳变中断
+  EXTI_Trigger_Rising = 0x08,            //上升沿中断
+  EXTI_Trigger_Falling = 0x0C,           //下降沿中断
+  EXTI_Trigger_Rising_Falling = 0x10     //跳变中断
 }EXTITrigger_TypeDef;
 
 typedef struct
 {
-  uint32_t EXTI_Line;					//EXTI中断线
-  EXTIMode_TypeDef EXTI_Mode;			//EXTI中断模式
-  EXTITrigger_TypeDef EXTI_Trigger;		//EXTI触发模式
-  FunctionalState EXTI_LineCmd;			//使能/失能选中线路
+  uint32_t EXTI_Line;                      //EXTI中断线
+  EXTIMode_TypeDef EXTI_Mode;              //EXTI中断模式
+  EXTITrigger_TypeDef EXTI_Trigger;        //EXTI触发模式
+  FunctionalState EXTI_LineCmd;            //使能/失能选中线路
 }EXTI_InitTypeDef;
 
 /****************************************************
-	   EXTI_Line取值			 说明		  对应外部中断
-		EXTI_Line0 			外部中断线0 		PX0
-		EXTI_Line1 			外部中断线1 		PX1
-		EXTI_Line2 			外部中断线2 		PX2
-		EXTI_Line3 			外部中断线3 		PX3
-		EXTI_Line4 			外部中断线4 		PX4
-		EXTI_Line5 			外部中断线5 		PX5
-		EXTI_Line6 			外部中断线6 		PX6
-		EXTI_Line7			外部中断线7 		PX7
-		EXTI_Line8			外部中断线8 		PX8
-		EXTI_Line9			外部中断线9 		PX9
-		EXTI_Line10			外部中断线10 	PX10
-		EXTI_Line11 		外部中断线11 	PX11
-		EXTI_Line12 		外部中断线12 	PX12
-		EXTI_Line13 		外部中断线13 	PX13
-		EXTI_Line14 		外部中断线14 	PX14
-		EXTI_Line15 		外部中断线15 	PX15
-		EXTI_Line16 		外部中断线16 	PVD输出
-		EXTI_Line17 		外部中断线17 	RTC闹钟事件
-		EXTI_Line18 		外部中断线18		USB唤醒事件
+       EXTI_Line取值             说明          对应外部中断
+        EXTI_Line0            外部中断线0         PX0
+        EXTI_Line1            外部中断线1         PX1
+        EXTI_Line2            外部中断线2         PX2
+        EXTI_Line3            外部中断线3         PX3
+        EXTI_Line4            外部中断线4         PX4
+        EXTI_Line5            外部中断线5         PX5
+        EXTI_Line6            外部中断线6         PX6
+        EXTI_Line7            外部中断线7         PX7
+        EXTI_Line8            外部中断线8         PX8
+        EXTI_Line9            外部中断线9         PX9
+        EXTI_Line10           外部中断线10        PX10
+        EXTI_Line11           外部中断线11        PX11
+        EXTI_Line12           外部中断线12        PX12
+        EXTI_Line13           外部中断线13        PX13
+        EXTI_Line14           外部中断线14        PX14
+        EXTI_Line15           外部中断线15        PX15
+        EXTI_Line16           外部中断线16        PVD输出
+        EXTI_Line17           外部中断线17        RTC闹钟事件
+        EXTI_Line18           外部中断线18        USB唤醒事件
 ****************************************************/
 
-void EXTI_Init(EXTI_InitTypeDef* EXTI_InitStruct);	//初始化EXTI
-FlagStatus EXTI_GetFlagStatus(u32 EXTI_Line);		//取得指定EXTI线的标志位
-ITStatus EXTI_GetITStatus(u32 EXTI_Line);			//检查指定的EXTI线路是否被触发
-void EXTI_ClearFlag(u32 EXTI_Line);					//清除指定EXTI线的标志位
-void EXTI_ClearITPendingBit(u32 EXTI_Line);			//清除指定EXTI线路挂起位
+void EXTI_Init(EXTI_InitTypeDef* EXTI_InitStruct);   //初始化EXTI
+FlagStatus EXTI_GetFlagStatus(u32 EXTI_Line);        //取得指定EXTI线的标志位
+ITStatus EXTI_GetITStatus(u32 EXTI_Line);            //检查指定的EXTI线路是否被触发
+void EXTI_ClearFlag(u32 EXTI_Line);                  //清除指定EXTI线的标志位
+void EXTI_ClearITPendingBit(u32 EXTI_Line);          //清除指定EXTI线路挂起位
 
 /**************************************************
-			STM32F103的中断服务函数表速查
-    WWDG_IRQHandler				Window Watchdog
-	PVD_IRQHandler				PVD through EXTI Line detect
-	TAMPER_IRQHandler			Tamper
-	RTC_IRQHandler				RTC
-	FLASH_IRQHandler			Flash
-	RCC_IRQHandler				RCC
-	EXTI0_IRQHandler			EXTI Line 0
-	EXTI1_IRQHandler			EXTI Line 1
-	EXTI2_IRQHandler			EXTI Line 2
-	EXTI3_IRQHandler			EXTI Line 3
-	EXTI4_IRQHandler			EXTI Line 4
-	DMA1_Channel1_IRQHandler	DMA1 Channel 1
-	DMA1_Channel2_IRQHandler	DMA1 Channel 2
-	DMA1_Channel3_IRQHandler	DMA1 Channel 3
-	DMA1_Channel4_IRQHandler	DMA1 Channel 4
-	DMA1_Channel5_IRQHandler	DMA1 Channel 5
-	DMA1_Channel6_IRQHandler	DMA1 Channel 6
-	DMA1_Channel7_IRQHandler	DMA1 Channel 7
-	ADC1_2_IRQHandler			ADC1 & ADC2
-	USB_HP_CAN1_TX_IRQHandler	USB High Priority or CAN1 TX
-	USB_LP_CAN1_RX0_IRQHandler	USB Low Priority or CAN1 RX0
-    CAN1_RX1_IRQHandler			CAN1 RX1
-	CAN1_SCE_IRQHandler			CAN1 SCE
-	EXTI9_5_IRQHandler			EXTI Line 9..5
-	TIM1_BRK_TIM9_IRQHandler	TIM1 Break and TIM9
-	TIM1_UP_TIM10_IRQHandler	TIM1 Update and TIM10
-	TIM1_TRG_COM_TIM11_IRQHandler	TIM1 Trigger and Commutation and TIM11
-	TIM1_CC_IRQHandler			TIM1 Capture Compare
-	TIM2_IRQHandler				TIM2
-	TIM3_IRQHandler				TIM3
-	TIM4_IRQHandler				TIM4
-	I2C1_EV_IRQHandler			I2C1 Event
-	I2C1_ER_IRQHandler			I2C1 Error
-	I2C2_EV_IRQHandler			I2C2 Event
-	I2C2_ER_IRQHandler			I2C2 Error
-	SPI1_IRQHandler				SPI1
-	SPI2_IRQHandler				SPI2
-	USART1_IRQHandler			USART1
-	USART2_IRQHandler			USART2
-	USART3_IRQHandler			USART3
-	EXTI15_10_IRQHandler		EXTI Line 15..10
-	RTCAlarm_IRQHandler			RTC Alarm through EXTI Line
-	USBWakeUp_IRQHandler		USB Wakeup from suspend
-	TIM8_BRK_TIM12_IRQHandler	TIM8 Break and TIM12
-	TIM8_UP_TIM13_IRQHandler	TIM8 Update and TIM13
-	TIM8_TRG_COM_TIM14_IRQHandler	TIM8 Trigger and Commutation and TIM14
-	TIM8_CC_IRQHandler			TIM8 Capture Compare
-	ADC3_IRQHandler				ADC3
-	FSMC_IRQHandler				FSMC
-	SDIO_IRQHandler				SDIO
-	TIM5_IRQHandler				TIM5
-	SPI3_IRQHandler				SPI3
-	UART4_IRQHandler			UART4
-	UART5_IRQHandler			UART5
-	TIM6_IRQHandler				TIM6
-	TIM7_IRQHandler				TIM7
-	DMA2_Channel1_IRQHandler	DMA2 Channel1
-	DMA2_Channel2_IRQHandler	DMA2 Channel2
-	DMA2_Channel3_IRQHandler	DMA2 Channel3
-	DMA2_Channel4_5_IRQHandler	DMA2 Channel4 & Channel5
+            STM32F103的中断服务函数表速查
+    WWDG_IRQHandler                  Window Watchdog
+    PVD_IRQHandler                   PVD through EXTI Line detect
+    TAMPER_IRQHandler                Tamper
+    RTC_IRQHandler                   RTC
+    FLASH_IRQHandler                 Flash
+    RCC_IRQHandler                   RCC
+    EXTI0_IRQHandler                 EXTI Line 0
+    EXTI1_IRQHandler                 EXTI Line 1
+    EXTI2_IRQHandler                 EXTI Line 2
+    EXTI3_IRQHandler                 EXTI Line 3
+    EXTI4_IRQHandler                 EXTI Line 4
+    DMA1_Channel1_IRQHandler         DMA1 Channel 1
+    DMA1_Channel2_IRQHandler         DMA1 Channel 2
+    DMA1_Channel3_IRQHandler         DMA1 Channel 3
+    DMA1_Channel4_IRQHandler         DMA1 Channel 4
+    DMA1_Channel5_IRQHandler         DMA1 Channel 5
+    DMA1_Channel6_IRQHandler         DMA1 Channel 6
+    DMA1_Channel7_IRQHandler         DMA1 Channel 7
+    ADC1_2_IRQHandler                ADC1 & ADC2
+    USB_HP_CAN1_TX_IRQHandler        USB High Priority or CAN1 TX
+    USB_LP_CAN1_RX0_IRQHandler       USB Low Priority or CAN1 RX0
+    CAN1_RX1_IRQHandler              CAN1 RX1
+    CAN1_SCE_IRQHandler              CAN1 SCE
+    EXTI9_5_IRQHandler               EXTI Line 9..5
+    TIM1_BRK_TIM9_IRQHandler         TIM1 Break and TIM9
+    TIM1_UP_TIM10_IRQHandler         TIM1 Update and TIM10
+    TIM1_TRG_COM_TIM11_IRQHandler    TIM1 Trigger and Commutation and TIM11
+    TIM1_CC_IRQHandler               TIM1 Capture Compare
+    TIM2_IRQHandler                  TIM2
+    TIM3_IRQHandler                  TIM3
+    TIM4_IRQHandler                  TIM4
+    I2C1_EV_IRQHandler               I2C1 Event
+    I2C1_ER_IRQHandler               I2C1 Error
+    I2C2_EV_IRQHandler               I2C2 Event
+    I2C2_ER_IRQHandler               I2C2 Error
+    SPI1_IRQHandler                  SPI1
+    SPI2_IRQHandler                  SPI2
+    USART1_IRQHandler                USART1
+    USART2_IRQHandler                USART2
+    USART3_IRQHandler                USART3
+    EXTI15_10_IRQHandler             EXTI Line 15..10
+    RTCAlarm_IRQHandler              RTC Alarm through EXTI Line
+    USBWakeUp_IRQHandler             USB Wakeup from suspend
+    TIM8_BRK_TIM12_IRQHandler        TIM8 Break and TIM12
+    TIM8_UP_TIM13_IRQHandler         TIM8 Update and TIM13
+    TIM8_TRG_COM_TIM14_IRQHandler    TIM8 Trigger and Commutation and TIM14
+    TIM8_CC_IRQHandler               TIM8 Capture Compare
+    ADC3_IRQHandler                  ADC3
+    FSMC_IRQHandler                  FSMC
+    SDIO_IRQHandler                  SDIO
+    TIM5_IRQHandler                  TIM5
+    SPI3_IRQHandler                  SPI3
+    UART4_IRQHandler                 UART4
+    UART5_IRQHandler                 UART5
+    TIM6_IRQHandler                  TIM6
+    TIM7_IRQHandler                  TIM7
+    DMA2_Channel1_IRQHandler         DMA2 Channel1
+    DMA2_Channel2_IRQHandler         DMA2 Channel2
+    DMA2_Channel3_IRQHandler         DMA2 Channel3
+    DMA2_Channel4_5_IRQHandler       DMA2 Channel4 & Channel5
 **************************************************/
 ```
 

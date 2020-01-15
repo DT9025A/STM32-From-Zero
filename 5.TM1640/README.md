@@ -51,10 +51,10 @@ void TM1640_Transfer (uint8_t data) {
 	for (i = 0; i < 8; i++) {
 		GPIO_WriteBit (GPIOA, SCLK, (BitAction) 0);//写时钟低
 		delay_ms (1);
-        GPIO_WriteBit (GPIOA, DIN, (BitAction) ((data >> i) & 1));//写数据
-        GPIO_WriteBit (GPIOA, SCLK, (BitAction) 1);//写时钟高
-        delay_ms (1);
-        GPIO_WriteBit (GPIOA, SCLK, (BitAction) 0);//写时钟低
+		GPIO_WriteBit (GPIOA, DIN, (BitAction) ((data >> i) & 1));//写数据
+		GPIO_WriteBit (GPIOA, SCLK, (BitAction) 1);//写时钟高
+		delay_ms (1);
+		GPIO_WriteBit (GPIOA, SCLK, (BitAction) 0);//写时钟低
     }
 }
 
@@ -71,9 +71,9 @@ TM1640有两种显示数据传输模式：连续地址和指定地址。对应�
 ```c
 //向TM1640写指令
 void TM1640_SendCmd (uint8_t data) {
-    TM1640_StartTransfer();
-    TM1640_Transfer (data);
-    TM1640_EndTransfer();
+	TM1640_StartTransfer();
+	TM1640_Transfer (data);
+	TM1640_EndTransfer();
 }
 ```
 
@@ -98,10 +98,10 @@ void TM1640_Display (u8 add, u8 ptr) {
 
 //初始化
 void TM1640_Init () {
-    int i;
+	int i;
 	TM1640_SendCmd(0x44);//指定地址模式
     for (i = 0; i < 8; i++) {
-        TM1640_Display (i, 20);//清空显示
+		TM1640_Display (i, 20);//清空显示
     }
 	TM1640_SendCmd(0x8f);//亮度 最大
 }
