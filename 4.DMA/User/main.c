@@ -1,4 +1,4 @@
-/*****************
+ï»¿/*****************
 * DMA
 * DT9025A
 * 19/12/14
@@ -6,7 +6,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
-#include "stm32f10x.h" //STM32Í·ÎÄ¼ş
+#include "stm32f10x.h" //STM32å¤´æ–‡ä»¶
 #include "sys.h"
 
 //DMA TEST
@@ -32,7 +32,7 @@ void GPIO_Configuration() {
 }
 
 void USART1_printf (char *fmt, ...) {
-    char buffer[200 + 1]; // Êı¾İ³¤¶È
+    char buffer[200 + 1]; // æ•°æ®é•¿åº¦
     u8 i = 0;
     va_list arg_ptr;
     va_start (arg_ptr, fmt);
@@ -45,33 +45,33 @@ void USART1_printf (char *fmt, ...) {
 }
 
 void USART_Configuration (u32 bound) {
-    //GPIO¶Ë¿ÚÉèÖÃ
+    //GPIOç«¯å£è®¾ç½®
     GPIO_InitTypeDef GPIO_InitStructure;
     USART_InitTypeDef USART_InitStructure;
 
-    RCC_APB2PeriphClockCmd (RCC_APB2Periph_USART1 | RCC_APB2Periph_GPIOA, ENABLE);	//Ê¹ÄÜUSART1£¬GPIOAÊ±ÖÓ
+    RCC_APB2PeriphClockCmd (RCC_APB2Periph_USART1 | RCC_APB2Periph_GPIOA, ENABLE);	//ä½¿èƒ½USART1ï¼ŒGPIOAæ—¶é’Ÿ
 
     //USART1_TX   PA.9
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; //PA.9
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	//¸´ÓÃÍÆÍìÊä³ö
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	//å¤ç”¨æ¨æŒ½è¾“å‡º
     GPIO_Init (GPIOA, &GPIO_InitStructure);
 
     //USART1_RX	  PA.10
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;//¸¡¿ÕÊäÈë
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;//æµ®ç©ºè¾“å…¥
     GPIO_Init (GPIOA, &GPIO_InitStructure);
 
-    //USART ³õÊ¼»¯ÉèÖÃ
-    USART_InitStructure.USART_BaudRate = bound;//Ò»°ãÉèÖÃÎª9600;
-    USART_InitStructure.USART_WordLength = USART_WordLength_8b;//×Ö³¤Îª8Î»Êı¾İ¸ñÊ½
-    USART_InitStructure.USART_StopBits = USART_StopBits_1;//Ò»¸öÍ£Ö¹Î»
-    USART_InitStructure.USART_Parity = USART_Parity_No;//ÎŞÆæÅ¼Ğ£ÑéÎ»
-    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;//ÎŞÓ²¼şÊı¾İÁ÷¿ØÖÆ
-    USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;	//ÊÕ·¢Ä£Ê½
-    USART_Init (USART1, &USART_InitStructure); //³õÊ¼»¯´®¿Ú
-    USART_ITConfig (USART1, USART_IT_RXNE, ENABLE); //¿ªÆôENABLE/¹Ø±ÕDISABLEÖĞ¶Ï
-    USART_Cmd (USART1, ENABLE);                   //Ê¹ÄÜ´®¿Ú
+    //USART åˆå§‹åŒ–è®¾ç½®
+    USART_InitStructure.USART_BaudRate = bound;//ä¸€èˆ¬è®¾ç½®ä¸º9600;
+    USART_InitStructure.USART_WordLength = USART_WordLength_8b;//å­—é•¿ä¸º8ä½æ•°æ®æ ¼å¼
+    USART_InitStructure.USART_StopBits = USART_StopBits_1;//ä¸€ä¸ªåœæ­¢ä½
+    USART_InitStructure.USART_Parity = USART_Parity_No;//æ— å¥‡å¶æ ¡éªŒä½
+    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;//æ— ç¡¬ä»¶æ•°æ®æµæ§åˆ¶
+    USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;	//æ”¶å‘æ¨¡å¼
+    USART_Init (USART1, &USART_InitStructure); //åˆå§‹åŒ–ä¸²å£
+    USART_ITConfig (USART1, USART_IT_RXNE, ENABLE); //å¼€å¯ENABLE/å…³é—­DISABLEä¸­æ–­
+    USART_Cmd (USART1, ENABLE);                   //ä½¿èƒ½ä¸²å£
 }
 
 void DMA_Configuration() {
@@ -92,7 +92,7 @@ void DMA_Configuration() {
     DMA_Init (DMA1_Channel4, &DMA_InitStructure);
 }
 
-int main (void) {   //Ö÷³ÌĞò
+int main (void) {   //ä¸»ç¨‹åº
     u8 us = 0;
     RCC_Configuration();
     GPIO_Configuration();

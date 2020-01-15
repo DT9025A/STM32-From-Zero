@@ -16,8 +16,6 @@
 4. 实现中断服务程序
    1. 注：在中断服务程序结束前要调用`EXTI_ClearITPendingBit`清除挂起位
 
-
-
 ### NVIC
 
 ---
@@ -65,7 +63,7 @@ NVIC(Nested Vectored Interrupt Controller)，即嵌套中断向量控制器，�
 
 关于NVIC的通俗易懂理解可以参考[这里](https://blog.csdn.net/qlexcel/article/details/78841296)，较专业参考[这里](https://www.cnblogs.com/121792730applllo/p/5155368.html)
 
-NVIC有关库函数位于《参考手册》的163页
+NVIC有关库函数位于《固件库手册》的163页，NVIC的详细说明，请参考另一篇ST的文档和一篇ARM的文档：[《STM32F10xxx Cortex-M3编程手册》](http://www.st.com/stonline/products/literature/pm/15491.pdf)和[《Cortex™-M3技术参考手册》](http://infocenter.arm.com/help/topic/com.arm.doc.ddi0337e/DDI0337E_cortex_m3_r1p1_trm.pdf)。
 
 ```c
 //NVIC有关定义和操作函数
@@ -143,7 +141,7 @@ EXTI (External interrupt/event controller)，即外部中断/事件控制器，�
 
 EXTI使用时需要实现对应的中断服务程序，**并在服务程序中使用`EXTI_ClearITPendingBit`清除中断挂起位。**
 
-EXTI有关库函数位于《参考手册》的98页
+EXTI有关库函数位于《固件库手册》的98页，EXTI有关信息位于《数据手册》的134页
 
 ```C
 //EXTI有关定义和操作函数
