@@ -8,7 +8,7 @@ TM1640 是一种LED（发光二极管显示器）驱动控制与用电路，内�
 
 2.TM1640在哪？
 
-![在这里(即答)](.\Picture\IMG_20200109_222320.jpg)
+![在这里(即答)](https://github.com/DT9025A/STM32-From-Zero/blob/master/5.TM1640/Picture/IMG_20200109_222320.jpg)
 
 就这。
 
@@ -18,7 +18,7 @@ TM1640 是一种LED（发光二极管显示器）驱动控制与用电路，内�
 
 这个问题问得好。大家先来看这个接口说明：
 
-![](.\Picture\Captured_1.png)
+![](https://github.com/DT9025A/STM32-From-Zero/blob/master/5.TM1640/Picture/Captured_1.png)
 
 看一看，就是一个小小的串行协议：DIN与SCLK先后产生下降沿表示开始数据传输，数据在SCLK的上升沿被锁存，在SCLK的下降沿被释放。一次传输8个位（一个字节），由低位到高位。最后，SCLK和DIN先后产生上升沿，表示数据传输结束。
 
@@ -62,9 +62,9 @@ void TM1640_Transfer (uint8_t data) {
 
 TM1640有两种显示数据传输模式：连续地址和指定地址。对应时序如下图。
 
-![连续地址](Picture\Captured_2.png)
+![连续地址](https://github.com/DT9025A/STM32-From-Zero/blob/master/5.TM1640/Picture/Captured_2.png)
 
-![指定地址](Picture\Captured_3.png)
+![指定地址](https://github.com/DT9025A/STM32-From-Zero/blob/master/5.TM1640/Picture/Captured_3.png)
 
 从上可以看出有些指令需要START+END。所以可以构建一个新函数，专门传输START+1BYTE+END指令。
 
@@ -110,3 +110,5 @@ void TM1640_Init () {
 这次咕咕咕是有原因的！（超大声）
 
 核心板的FT232菜掉了，买的STLINK好长时间才收到（哭唧唧
+
+关于更多本驱动芯片的信息，读者可查阅《TM1640》
